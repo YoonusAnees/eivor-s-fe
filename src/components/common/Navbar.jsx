@@ -25,11 +25,18 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`glass-navbar transition-all duration-300 ${scrolled ? 'py-4 shadow-sm' : 'py-6'}`}>
-      <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
-        {/* Logo */}
-        <Link to="/" className="text-2xl font-serif font-bold tracking-widest uppercase">
-          Eivor
+    <nav className={`fixed -top-5 left-0 right-0 z-50 transition-all duration-300 ${
+      scrolled 
+        ? 'py-4 bg-white/90 backdrop-blur-md shadow-sm' 
+        : 'py-6 bg-white md:bg-transparent'
+    }`}>
+      <div className="relative max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
+        <Link to="/" className="flex items-center">
+          <img 
+            src="/siteicon.PNG" 
+            alt="logo" 
+            className='h-16 w-auto md:h-20 lg:h-20 transition-all duration-300' 
+          />
         </Link>
 
         {/* Desktop Links */}
