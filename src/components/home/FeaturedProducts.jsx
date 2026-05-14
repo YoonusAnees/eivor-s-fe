@@ -44,7 +44,7 @@ const FeaturedProducts = () => {
             <Link to={`/products/${product._id}`} key={product._id} className="group cursor-pointer">
               <div className="aspect-[3/4] overflow-hidden bg-neutral-soft mb-6 relative">
                 <img 
-                  src={product.image.startsWith('http') ? product.image : `http://localhost:5000${product.image}`} 
+                  src={product.image.startsWith('http') ? product.image : `${ASSET_URL}${product.image}`} 
                   alt={product.name} 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
