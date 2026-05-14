@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { ASSET_URL } from "../../api/axios";
 
 const ProductGallery = ({ images }) => {
   const [activeImage, setActiveImage] = useState(0);
@@ -9,7 +10,7 @@ const ProductGallery = ({ images }) => {
     if (!url) return "";
     return url.startsWith("http")
       ? url
-      : `http://localhost:5000${url}`;
+      : `${ASSET_URL}${url}`;
   };
 
   if (displayImages.length === 0)

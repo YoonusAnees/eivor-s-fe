@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import SectionTitle from '../common/SectionTitle';
 import Button from '../common/Button';
-import api from '../../api/axios';
+import api, { ASSET_URL } from '../../api/axios';
 import { Link } from 'react-router-dom';
 
 const FeaturedProducts = () => {

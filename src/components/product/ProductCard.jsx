@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { ASSET_URL } from "../../api/axios";
 
 const ProductCard = ({ product }) => {
   return (
@@ -16,7 +17,7 @@ const ProductCard = ({ product }) => {
             src={
               product.image?.startsWith('http')
                 ? product.image
-                : `http://localhost:5000${product.image}`
+                : `${ASSET_URL}${product.image}`
             }
             alt={product.name}
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
