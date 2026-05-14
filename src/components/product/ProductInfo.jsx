@@ -4,9 +4,9 @@ import { Minus, Plus, Heart, Share2 } from 'lucide-react';
 
 const ProductInfo = ({ product }) => {
   const [quantity, setQuantity] = useState(1);
-  const [selectedSize, setSelectedSize] = useState('M');
+  const [selectedSize, setSelectedSize] = useState(product?.sizes?.[0] || "M");
 
-  const sizes = ['XS', 'S', 'M', 'L', 'XL'];
+  const sizes = product?.sizes?.length > 0 ? product.sizes : ["XS", "S", "M", "L", "XL", "XXL"];
 
   return (
     <div className="flex flex-col h-full">

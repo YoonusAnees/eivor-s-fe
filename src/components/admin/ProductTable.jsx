@@ -11,6 +11,7 @@ const ProductTable = ({ products, onEdit, onDelete }) => {
               <th className="px-6 py-4 text-[10px] uppercase tracking-[0.2em] font-bold text-gray-500">Product</th>
               <th className="px-6 py-4 text-[10px] uppercase tracking-[0.2em] font-bold text-gray-500">Category</th>
               <th className="px-6 py-4 text-[10px] uppercase tracking-[0.2em] font-bold text-gray-500">Price</th>
+              <th className="px-6 py-4 text-[10px] uppercase tracking-[0.2em] font-bold text-gray-500">Sizes</th>
               <th className="px-6 py-4 text-[10px] uppercase tracking-[0.2em] font-bold text-gray-500">Stock</th>
               <th className="px-6 py-4 text-[10px] uppercase tracking-[0.2em] font-bold text-gray-500">Status</th>
               <th className="px-6 py-4 text-[10px] uppercase tracking-[0.2em] font-bold text-gray-500">Actions</th>
@@ -33,7 +34,16 @@ const ProductTable = ({ products, onEdit, onDelete }) => {
                 <td className="px-6 py-4">
                   <span className="text-[10px] uppercase tracking-widest text-gray-500">{product.category}</span>
                 </td>
-                <td className="px-6 py-4 font-medium">${product.price}</td>
+                <td className="px-6 py-4 font-medium">Rs.{product.price}</td>
+                <td className="px-6 py-4">
+                  <div className="flex flex-wrap gap-1">
+                    {product.sizes?.map(size => (
+                      <span key={size} className="text-[9px] bg-neutral-soft px-1.5 py-0.5 border border-gray-100 rounded-sm">
+                        {size}
+                      </span>
+                    ))}
+                  </div>
+                </td>
                 <td className="px-6 py-4 text-gray-500">{product.quantity || 45}</td>
                 <td className="px-6 py-4">
                   <span className={`px-2 py-1 text-[8px] uppercase tracking-widest font-bold ${

@@ -38,7 +38,7 @@ const Products = () => {
     });
 
   return (
-    <div className="section-padding min-h-screen">
+    <div className="section-padding min-h-screen mt-10">
       <div className="max-w-7xl mx-auto">
         <SectionTitle 
           title="All Collections" 

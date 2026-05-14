@@ -4,16 +4,22 @@ import { Link } from "react-router-dom";
 
 const Categories = () => {
   const categories = [
-    { name: "Apparel", image: "/Apperal.jpeg", path: "/products?category=Apparel" },
+    {
+      name: "Apparel",
+      image: "/Apperal.jpeg",
+      path: "/products?category=Apparel",
+    },
     {
       name: "Accessories",
-      image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=1935&auto=format&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=1935&auto=format&fit=crop",
       path: "/products?category=Accessories",
     },
     {
-      name: "Footwear",
-      image: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=2080&auto=format&fit=crop",
-      path: "/products?category=Footwear",
+      name: "Shawls",
+      image:
+        "https://shahkaar.com/cdn/shop/collections/Timeless-Jamavars-Shahkaar-15668121.jpg?v=1748353096&width=2048",
+      path: "/products?category=Shawls",
     },
   ];
 
@@ -87,4 +93,3 @@ const Categories = () => {
 };
 
 export default Categories;
-

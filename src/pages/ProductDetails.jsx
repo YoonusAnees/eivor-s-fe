@@ -49,7 +49,7 @@ const ProductDetails = () => {
   if (!product) return <div className="section-padding text-center">Product not found.</div>;
 
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-white min-h-screen mt-10">
       <div className="max-w-7xl mx-auto section-padding">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
           {/* Gallery */}

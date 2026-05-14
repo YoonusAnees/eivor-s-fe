@@ -1,18 +1,28 @@
-import React from 'react';
-import { Search, ChevronDown } from 'lucide-react';
+import React from "react";
+import { Search, ChevronDown } from "lucide-react";
 
-const ProductFilters = ({ activeCategory, setActiveCategory, searchQuery, setSearchQuery, sortOrder, setSortOrder }) => {
-  const categories = ['All', 'Apparel', 'Accessories', 'Footwear', 'Outerwear'];
+const ProductFilters = ({
+  activeCategory,
+  setActiveCategory,
+  searchQuery,
+  setSearchQuery,
+  sortOrder,
+  setSortOrder,
+}) => {
+  const categories = ["All", "Apparel", "Accessories", "Shawls"];
 
   return (
     <div className="mb-12 space-y-8">
       {/* Search and Sort */}
       <div className="flex flex-col md:flex-row justify-between items-center gap-6">
         <div className="relative w-full md:w-96 group">
-          <Search className="absolute left-0 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-black transition-colors" size={18} />
-          <input 
-            type="text" 
-            placeholder="SEARCH COLLECTION" 
+          <Search
+            className="absolute left-0 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-black transition-colors"
+            size={18}
+          />
+          <input
+            type="text"
+            placeholder="SEARCH COLLECTION"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="w-full bg-transparent border-b border-gray-200 py-3 pl-8 text-xs uppercase tracking-widest outline-none focus:border-black transition-colors"
@@ -20,8 +30,10 @@ const ProductFilters = ({ activeCategory, setActiveCategory, searchQuery, setSea
         </div>
 
         <div className="flex items-center space-x-2 border-b border-gray-200 pb-3 group cursor-pointer">
-          <span className="text-[10px] uppercase tracking-widest text-gray-400">Sort By:</span>
-          <select 
+          <span className="text-[10px] uppercase tracking-widest text-gray-400">
+            Sort By:
+          </span>
+          <select
             value={sortOrder}
             onChange={(e) => setSortOrder(e.target.value)}
             className="bg-transparent text-xs uppercase tracking-widest font-medium outline-none cursor-pointer"
@@ -41,7 +53,9 @@ const ProductFilters = ({ activeCategory, setActiveCategory, searchQuery, setSea
             key={cat}
             onClick={() => setActiveCategory(cat)}
             className={`text-xs uppercase tracking-[0.2em] transition-all relative pb-2 ${
-              activeCategory === cat ? 'text-black font-bold' : 'text-gray-400 hover:text-gray-600'
+              activeCategory === cat
+                ? "text-black font-bold"
+                : "text-gray-400 hover:text-gray-600"
             }`}
           >
             {cat}

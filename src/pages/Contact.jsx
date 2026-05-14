@@ -5,7 +5,7 @@ import { Mail, Phone, MapPin } from 'lucide-react';
 
 const Contact = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen mt-10">
       <section className="section-padding max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
           <div>

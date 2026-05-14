@@ -64,11 +64,14 @@ const Navbar = () => {
     { name: "About", path: "/about" },
     { name: "Contact", path: "/contact" },
   ];
+  const isDarkPage =
+    location.pathname === "/" || location.pathname === "/offers";
+  const showSolidNav = !isDarkPage || scrolled;
 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
+        showSolidNav
           ? "py-4 bg-white/95 backdrop-blur-md shadow-sm border-b border-neutral-100"
           : "py-6 bg-transparent"
       }`}
@@ -76,7 +79,7 @@ const Navbar = () => {
       <div className="relative max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
         <Link to="/" className="flex items-center">
           <img
-            src={scrolled ? "/siteicon.PNG" : "/eiirswhite.PNG"}
+            src={showSolidNav ? "/siteicon.PNG" : "/eiirswhite.PNG"}
             alt="logo"
             className="h-14 w-auto md:h-16 lg:h-16 transition-all duration-500"
           />
@@ -89,7 +92,7 @@ const Navbar = () => {
               key={link.name}
               to={link.path}
               className={`text-[11px] uppercase tracking-[0.2em] font-medium transition-all duration-300 hover:opacity-70 ${
-                scrolled
+                showSolidNav
                   ? location.pathname === link.path
                     ? "text-black border-b border-black"
                     : "text-neutral-600"
@@ -105,7 +108,7 @@ const Navbar = () => {
 
         {/* Icons */}
         <div
-          className={`flex items-center space-x-6 transition-colors duration-500 ${scrolled ? "text-black" : "text-white"}`}
+          className={`flex items-center space-x-6 transition-colors duration-500 ${showSolidNav ? "text-black" : "text-white"}`}
         >
           <button
             onClick={() => setIsSearchOpen(true)}
@@ -217,13 +220,7 @@ const Navbar = () => {
                       Popular Categories
                     </h5>
                     <div className="flex flex-wrap gap-4">
-                      {[
-                        "Apparel",
-                        "Footwear",
-                        "Outerwear",
-                        "Accessories",
-                        "Offer",
-                      ].map((cat) => (
+                      {["Apparel", "Accessories", "Shawls"].map((cat) => (
                         <button
                           key={cat}
                           onClick={() => setSearchQuery(cat)}

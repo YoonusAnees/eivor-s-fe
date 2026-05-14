@@ -11,14 +11,14 @@ const ProductForm = ({ initialData, onSubmit, onClose }) => {
       price: "",
       quantity: "",
       image: "",
-      sizes: ["S", "M", "L", "XL"],
+      sizes: ["52", "54", "56", "58"],
       discount: 0,
       featured: false,
     },
   );
   const [imageFiles, setImageFiles] = useState([]);
 
-  const availableSizes = ["XS", "S", "M", "L", "XL", "XXL"];
+  const availableSizes = ["52", "54", "56", "58"];
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -92,8 +92,7 @@ const ProductForm = ({ initialData, onSubmit, onClose }) => {
               >
                 <option>Apparel</option>
                 <option>Accessories</option>
-                <option>Footwear</option>
-                <option>Outerwear</option>
+                <option>Shawls</option>
                 <option>Offer</option>
               </select>
             </div>
