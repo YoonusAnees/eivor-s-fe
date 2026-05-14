@@ -30,7 +30,7 @@ const Hero = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="max-w-2xl"
         >
-          <span className="text-[10px] uppercase tracking-[0.5em] text-gray-600 mb-6 block font-medium">
+          <span className="text-[10px] uppercase tracking-[0.5em] text-white mb-6 block font-bold">
             New Collection 2026
           </span>
 
@@ -39,7 +39,7 @@ const Hero = () => {
             <span className="italic">Minimalism</span>
           </h1>
 
-          <p className="text-gray-700 text-lg mb-10 max-w-md leading-relaxed">
+          <p className="text-gray-200 text-lg mb-10 max-w-md leading-relaxed">
             Discover our latest collection of premium essentials designed for
             the modern individual who values quality and timeless style.
           </p>
