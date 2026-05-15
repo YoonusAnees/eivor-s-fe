@@ -12,7 +12,10 @@ const Hero = () => {
         const playPromise = videoRef.current.play();
         if (playPromise !== undefined) {
           playPromise.catch((error) => {
-            console.log("Autoplay was prevented, waiting for user interaction:", error);
+            console.log(
+              "Autoplay was prevented, waiting for user interaction:",
+              error,
+            );
           });
         }
       }
@@ -45,10 +48,10 @@ const Hero = () => {
 
         {/* Overlays for premium feel and readability */}
         <div className="absolute inset-0 bg-black/40 z-[1]" />
-        
+
         {/* Subtle gradient for desktop */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent z-[2] hidden md:block" />
-        
+
         {/* Vertical gradient for mobile to make text pop from bottom if needed */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/30 z-[2] md:hidden" />
       </div>
@@ -71,7 +74,9 @@ const Hero = () => {
 
           <h1 className="text-4xl sm:text-6xl md:text-8xl font-serif font-light leading-[1.1] mb-6 md:mb-8 text-white">
             The Art of <br />
-            <span className="italic font-extralight text-neutral-300">Minimalism</span>
+            <span className="italic font-extralight text-neutral-300">
+              Minimalism
+            </span>
           </h1>
 
           <p className="text-gray-300 text-sm md:text-lg mb-8 md:mb-10 max-w-md mx-auto md:mx-0 leading-relaxed font-light">
@@ -80,14 +85,14 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-            <Button 
-              variant="primary" 
+            <Button
+              variant="primary"
               className="!bg-white !text-black hover:!bg-neutral-200 transition-colors px-10 py-4 text-xs tracking-widest"
             >
               Shop Collection
             </Button>
-            <Button 
-              variant="secondary" 
+            <Button
+              variant="secondary"
               className="!border-white !text-white hover:!bg-white hover:!text-black transition-all px-10 py-4 text-xs tracking-widest"
             >
               Explore More
@@ -104,7 +109,9 @@ const Hero = () => {
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 hidden md:block"
       >
         <div className="flex flex-col items-center gap-2">
-          <span className="text-[10px] uppercase tracking-[0.3em] text-white/40">Scroll</span>
+          <span className="text-[10px] uppercase tracking-[0.3em] text-white/40">
+            Scroll
+          </span>
           <div className="w-[1px] h-12 bg-gradient-to-b from-white/40 to-transparent" />
         </div>
       </motion.div>
