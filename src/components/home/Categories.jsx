@@ -30,7 +30,7 @@ const Categories = () => {
           {/* Left Large Category */}
           <Link
             to={categories[0].path}
-            className="relative group overflow-hidden aspect-[4/5] md:aspect-auto md:min-h-[600px] block"
+            className="relative group overflow-hidden aspect-[4/5] md:aspect-auto md:min-h-[440px] block"
           >
             <img
               src={categories[0].image}

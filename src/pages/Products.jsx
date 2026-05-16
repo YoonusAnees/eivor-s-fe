@@ -1,15 +1,26 @@
-import React, { useState, useEffect } from 'react';
-import api from '../api/axios';
-import ProductFilters from '../components/product/ProductFilters';
-import ProductGrid from '../components/product/ProductGrid';
-import SectionTitle from '../components/common/SectionTitle';
+import React, { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
+import api from "../api/axios";
+import ProductFilters from "../components/product/ProductFilters";
+import ProductGrid from "../components/product/ProductGrid";
+import SectionTitle from "../components/common/SectionTitle";
 
 const Products = () => {
+  const [searchParams] = useSearchParams();
+  const initialCategory = searchParams.get("category") || "All";
+
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [activeCategory, setActiveCategory] = useState('All');
-  const [searchQuery, setSearchQuery] = useState('');
-  const [sortOrder, setSortOrder] = useState('newest');
+  const [activeCategory, setActiveCategory] = useState(initialCategory);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [sortOrder, setSortOrder] = useState("newest");
+
+  useEffect(() => {
+    const categoryFromUrl = searchParams.get("category");
+    if (categoryFromUrl) {
+      setActiveCategory(categoryFromUrl);
+    }
+  }, [searchParams]);
 
   useEffect(() => {
     const fetchProducts = async () => {
