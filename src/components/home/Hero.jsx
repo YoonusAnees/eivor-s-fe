@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import Button from "../common/Button";
 
 const Hero = () => {
@@ -85,18 +86,22 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-            <Button
-              variant="primary"
-              className="!bg-white !text-black hover:!bg-neutral-200 transition-colors px-10 py-4 text-xs tracking-widest"
-            >
-              Shop Collection
-            </Button>
-            <Button
-              variant="secondary"
-              className="!border-white !text-white hover:!bg-white hover:!text-black transition-all px-10 py-4 text-xs tracking-widest"
-            >
-              Explore More
-            </Button>
+            <Link to="/products?category=Apparel">
+              <Button
+                variant="primary"
+                className="!bg-white !text-black hover:!bg-neutral-200 transition-colors px-10 py-4 text-xs tracking-widest w-full sm:w-auto"
+              >
+                Shop Collection
+              </Button>
+            </Link>
+            <Link to="/products">
+              <Button
+                variant="secondary"
+                className="!border-white !text-white hover:!bg-white hover:!text-black transition-all px-10 py-4 text-xs tracking-widest w-full sm:w-auto"
+              >
+                Explore More
+              </Button>
+            </Link>
           </div>
         </motion.div>
       </div>
